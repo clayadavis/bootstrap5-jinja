@@ -9,9 +9,9 @@
     {% endif %}
     {% for text, full_name, path, link, indent_levels, indent_change_before, indent_change_after in cat_hierarchy %}
         {% for i in range(indent_change_before) %}
-            <ul class="list-inline">
+            <ul class="tags list-inline">
         {% endfor %}
-        <li class="list-inline-item"><a class="reference badge badge-secondary" href="{{ link }}">{{ text|e }}</a>
+        <li class="list-inline-item"><a class="reference badge bg-secondary" href="{{ link }}">{{ text|e }}</a>
         {% if indent_change_after <= 0 %}
             </li>
         {% endif %}
@@ -27,10 +27,10 @@
     {% endif %}
 {% endif %}
 {% if items %}
-    <ul class="list-inline">
+    <ul class="tags list-inline">
     {% for text, link in items %}
         {% if text not in hidden_tags %}
-            <li class="list-inline-item"><a class="reference badge badge-secondary" href="{{ link }}">{{ text|e }}</a></li>
+            <li class="list-inline-item"><a class="reference badge bg-secondary" href="{{ link }}">{{ text|e }}</a></li>
         {% endif %}
     {% endfor %}
     </ul>
